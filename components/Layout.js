@@ -1,11 +1,13 @@
+import Header from './Header';
+
 const Layout = ({ children }) => {
-    return (
-        <React.Fragment>
-            <p>header</p>
-            {children}
-            <p>footer</p>
-        </React.Fragment>
-    );
+  return (
+    <React.Fragment>
+      <Header />
+      {children}
+      <p>footer</p>
+    </React.Fragment>
+  );
 };
 
 export default Layout;
