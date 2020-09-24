@@ -1,12 +1,17 @@
 import Head from 'next/head';
-
-function MyApp({ Component, pageProps }) {
+import '../public/css/styles.modules.css';
+export default function MyApp({ Component, pageProps }) {
   return (
-    <Component {...pageProps}>
-      <Head>
-        <meta name='viewport' content='width=device-width, initial-scale=1.0' />
-      </Head>
-    </Component>
+    <React.Fragment>
+      <Component {...pageProps}>
+        <Head>
+          <meta
+            name='viewport'
+            content='width=device-width, initial-scale=1.0'
+          />
+        </Head>
+      </Component>
+    </React.Fragment>
   );
 }
 
@@ -21,5 +26,3 @@ function MyApp({ Component, pageProps }) {
 //
 //   return { ...appProps }
 // }
-
-export default MyApp;
