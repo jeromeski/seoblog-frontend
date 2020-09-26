@@ -1,5 +1,7 @@
 import Head from 'next/head';
+import '../node_modules/react-quill/dist/quill.snow.css';
 import '../public/css/styles.modules.css';
+
 export default function MyApp({ Component, pageProps }) {
   return (
     <React.Fragment>
