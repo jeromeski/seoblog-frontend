@@ -35,6 +35,9 @@ const CreateBlog = ({ router }) => {
   const [categories, setCategories] = useState([]);
   const [tags, setTags] = useState([]);
 
+  const [checked, setChecked] = useState([]); // categories
+  const [checkedTag, setCheckedTag] = useState([]); // tags
+
   const {
     error,
     sizeError,
@@ -89,6 +92,21 @@ const CreateBlog = ({ router }) => {
     if (typeof window !== 'undefined') {
       localStorage.setItem('blog', JSON.stringify(e));
     }
+  };
+
+  const handleToggle = c => () => {
+    setValues({ ...values, error: '' });
+    const clickedCategory = checked.indexOf(c);
+    const all = [...checked];
+
+    if (clickedCategory === -1) {
+      all.push(c);
+    } else {
+      all.splice(clickedCategory, 1);
+    }
+    console.log(all);
+    setChecked(all);
+    formData.set('categories', all);
   };
 
   const showCategories = () => {
