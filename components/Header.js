@@ -42,6 +42,20 @@ const Header = () => {
               </NavItem>
             </React.Fragment>
 
+            {!isAuth() && (
+              <React.Fragment>
+                <NavItem>
+                  <NavLink style={{ cursor: 'pointer' }} href='/signin'>
+                    Signin
+                  </NavLink>
+                </NavItem>
+                <NavItem>
+                  <NavLink style={{ cursor: 'pointer' }} href='/signup'>
+                    Signup
+                  </NavLink>
+                </NavItem>
+              </React.Fragment>
+            )}
             {isAuth() && isAuth().role === 0 && (
               <NavItem>
                 <Link href='/user'>

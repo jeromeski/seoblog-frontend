@@ -74,7 +74,7 @@ const Category = () => {
 
   const clickSubmit = e => {
     e.preventDefault();
-    // console.log('create category', name);
+    // console.log('create Tag');
     create({ name }, token).then(data => {
       if (data.error) {
         setValues({ ...values, error: data.error, success: false });
@@ -82,9 +82,9 @@ const Category = () => {
         setValues({
           ...values,
           error: false,
-          success: false,
+          success: true,
           name: '',
-          removed: !removed,
+          removed: false,
           reload: !reload
         });
       }
@@ -97,7 +97,7 @@ const Category = () => {
       name: e.target.value,
       error: false,
       success: false,
-      removed: ''
+      remove: ''
     });
   };
 
