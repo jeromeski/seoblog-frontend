@@ -1,19 +1,15 @@
-import Head from 'next/head';
-import '../node_modules/react-quill/dist/quill.snow.css';
-import '../public/css/styles.modules.css';
+// import App from 'next/app'
 
-export default function MyApp({ Component, pageProps }) {
+const { Head } = require('next/document');
+
+function MyApp({ Component, pageProps }) {
   return (
-    <React.Fragment>
-      <Component {...pageProps}>
-        <Head>
-          <meta
-            name='viewport'
-            content='width=device-width, initial-scale=1.0'
-          />
-        </Head>
-      </Component>
-    </React.Fragment>
+    <Component {...pageProps}>
+      <Head>
+        <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+        ;
+      </Head>
+    </Component>
   );
 }
 
@@ -28,3 +24,5 @@ export default function MyApp({ Component, pageProps }) {
 //
 //   return { ...appProps }
 // }
+
+export default MyApp;
