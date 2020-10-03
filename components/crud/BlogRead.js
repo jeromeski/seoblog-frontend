@@ -40,6 +40,21 @@ const BlogRead = () => {
       deleteBlog(slug);
     }
   };
+  const showUpdateButton = blog => {
+    if (isAuth() && isAuth().role === 0) {
+      return (
+        <Link href={`/dashboard/user/blog/${blog.slug}`}>
+          <a>Update</a>
+        </Link>
+      );
+    } else if (isAuth() && isAuth().role === 1) {
+      return (
+        <Link href={`/admin/crud/${blog.slug}`}>
+          <a className='ml-2 btn btn-sm btn-warning'>Update</a>
+        </Link>
+      );
+    }
+  };
 
   const showAllBlogs = () => {
     return blogs.map((blog, i) => {
@@ -55,6 +70,7 @@ const BlogRead = () => {
             onClick={() => deleteConfirm(blog.slug)}>
             Delete
           </button>
+          {showUpdateButton(blog)}
         </div>
       );
     });
