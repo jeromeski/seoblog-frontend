@@ -61,7 +61,7 @@ export const listRelated = blog => {
 };
 
 export const list = () => {
-  return fetch(`${API}/blog`, {
+  return fetch(`${API}/blogs`, {
     method: 'GET'
   })
     .then(response => {
@@ -77,8 +77,7 @@ export const removeBlog = (slug, token) => {
       Accept: 'application/json',
       'Content-Type': 'application/json',
       Authorization: `Bearer ${token}`
-    },
-    body: blog
+    }
   })
     .then(response => {
       return response.json();
