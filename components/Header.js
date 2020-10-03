@@ -32,16 +32,16 @@ const Header = () => {
 
   return (
     <div>
-      <Navbar color='light' light expand='md'>
-        <Link href='/'>
-          <NavLink className='font-weight-bold'>{APP_NAME}</NavLink>
+      <Navbar color="light" light expand="md">
+        <Link href="/">
+          <NavLink className="font-weight-bold">{APP_NAME}</NavLink>
         </Link>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
-          <Nav className='ml-auto' navbar>
+          <Nav className="ml-auto" navbar>
             <React.Fragment>
               <NavItem>
-                <Link href='/blogs'>
+                <Link href="/blogs">
                   <NavLink>Blogs</NavLink>
                 </Link>
               </NavItem>
@@ -50,12 +50,12 @@ const Header = () => {
             {!isAuth() && (
               <React.Fragment>
                 <NavItem>
-                  <Link href='/signin'>
+                  <Link href="/signin">
                     <NavLink>Signin</NavLink>
                   </Link>
                 </NavItem>
                 <NavItem>
-                  <Link href='/signup'>
+                  <Link href="/signup">
                     <NavLink>Signup</NavLink>
                   </Link>
                 </NavItem>
@@ -64,7 +64,7 @@ const Header = () => {
 
             {isAuth() && isAuth().role === 0 && (
               <NavItem>
-                <Link href='/user'>
+                <Link href="/user">
                   <NavLink>{`${isAuth().name}'s Dashboard`}</NavLink>
                 </Link>
               </NavItem>
@@ -72,7 +72,7 @@ const Header = () => {
 
             {isAuth() && isAuth().role === 1 && (
               <NavItem>
-                <Link href='/admin'>
+                <Link href="/admin">
                   <NavLink>{`${isAuth().name}'s Dashboard`}</NavLink>
                 </Link>
               </NavItem>
@@ -80,9 +80,7 @@ const Header = () => {
 
             {isAuth() && (
               <NavItem>
-                <NavLink
-                  style={{ cursor: 'pointer' }}
-                  onClick={() => signout(() => Router.replace(`/signin`))}>
+                <NavLink style={{ cursor: 'pointer' }} onClick={() => signout(() => Router.replace(`/signin`))}>
                   Signout
                 </NavLink>
               </NavItem>
