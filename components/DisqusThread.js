@@ -23,11 +23,7 @@ class DisqusThread extends React.Component {
   };
 
   shouldComponentUpdate(nextProps) {
-    return (
-      this.props.id !== nextProps.id ||
-      this.props.title !== nextProps.title ||
-      this.props.path !== nextProps.path
-    );
+    return this.props.id !== nextProps.id || this.props.title !== nextProps.title || this.props.path !== nextProps.path;
   }
 
   componentDidMount() {
@@ -48,7 +44,7 @@ class DisqusThread extends React.Component {
       window.disqus_url = WEBSITE_URL + path;
     }
 
-    return <div {...other} id='disqus_thread' />;
+    return <div {...other} id="disqus_thread" />;
   }
 }
 

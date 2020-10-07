@@ -46,7 +46,7 @@ export const listBlogsWithCategoriesAndTags = (skip, limit) => {
         .catch(err => console.log(err));
 };
 
-export const singleBlog = slug => {
+export const singleBlog = (slug = undefined) => {
     return fetch(`${API}/blog/${slug}`, {
         method: 'GET'
     })
